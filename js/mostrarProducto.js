@@ -13,7 +13,7 @@ function crearProducto(name, price, imagen, id) {
             <figcaption class="card-container--info">${name}</figcaption>
         </figure>
         <div class="card-container--value">
-            <p>s/${price}</p>
+            <p>L. ${price}</p>
             <button class="delete-button" data-id="${id}">
                 <img src="imagenes/trash-can.png" alt="eliminar" />
             </button>
@@ -22,13 +22,13 @@ function crearProducto(name, price, imagen, id) {
     const deleteButton = producto.querySelector("[data-id]");
     deleteButton.addEventListener("click", () => {
         Swal.fire({
-            title: '¿Está seguro de borrar este producto?',
-            text: "¡No podrás revertir esto!",
+            title: '¿Desea Borrar este Producto?',
+            text: "¡No podra devolverlo!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, bórralo!'
+            confirmButtonText: 'Si!'
         }).then(async (result) => {
             if (result.isConfirmed) {
                 await conexionApi.borrarProducto(id);

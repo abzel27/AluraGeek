@@ -11,7 +11,7 @@ export function accionFormulario() {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, limpiarlo!'
+            confirmButtonText: 'Sí, limpiar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 elFormulario.reset();
